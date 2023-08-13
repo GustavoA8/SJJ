@@ -1,3 +1,6 @@
+<?php
+include("connect.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -70,6 +73,18 @@ body{
     flex-direction: column;
     align-items: center;
 }
+.modal #sobre{
+    background-color: greenyellow;
+    font-family: 'Press Start 2P', cursive;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 section{
     margin-top: 1000px;
@@ -86,18 +101,19 @@ section{
 
 
   </style>
+  <audio id="musica" src="background-song.mpeg" controls autostart="true" loop></audio>
 </head>
 <body >
     
 <div class="modal" id="modal">
     <div class="content">
         <!-- Insire seu conteúdo -->
-        <form action="">
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome" value=""><br>
+        <form action="login.php" method="post">
+            <label for="nome">Nickname:</label><br>
+            <input type="text" id="nick" name="nick" value=""><br>
             <label for="senha">Senha</label><br>
             <input type="text" id="senha" name="senha" value=""><br><br>
-            <input type="submit" value="logar">
+            <input type="submit" value="logar" name="logar">
             <div class="float-sm-end">
             <input type="button" id="btnCriar" value="Criar">
             </div>
@@ -107,7 +123,7 @@ section{
 <div class="modal" id="modal2">
     <div class="content">
         <!-- Insire seu conteúdo -->
-        <form action="php/index.php" method="post">
+        <form action="index.php" method="post">
             <label for="cnome">Nome:</label><br>
             <input type="text" name="cnome" id="cnome"><br>
             <label for="cnick">Nickname:</label><br>
@@ -116,6 +132,13 @@ section{
             <input type="text" name="csenha" id="csenha"><br><br>
             <input type="submit" value="Cadastrar">
         </form>
+        
+    </div>
+</div>
+<div class="modal" >
+    <div id="sobre" class="content">
+        <!-- Insire seu conteúdo -->
+       
         
     </div>
 </div>
@@ -150,3 +173,35 @@ section{
     <script src="js/index.js"></script>
 </body>
 </html>
+<?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $nome = filter_input(INPUT_POST, "cnome", FILTER_SANITIZE_SPECIAL_CHARS);
+        $nick = filter_input(INPUT_POST, "cnick", FILTER_SANITIZE_SPECIAL_CHARS);
+        $senha = filter_input(INPUT_POST, "csenha", FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if(empty($nome)){
+            echo"Insira seu nome";
+        }
+        elseif(empty($nick)){
+            echo"Insira seu nick";
+        }
+        elseif(empty($senha)){
+            echo"Insira sua senha";
+        }
+        else{
+            $sql = "INSERT INTO tb_usuarios(user_nome, user_nick, user_senha) VALUE ('$nome','$nick','$senha')";
+            try{
+            mysqli_query($conn, $sql);
+            echo"Voce esta registado";
+            }
+            catch(mysqli_sql_exception){
+                mysqli_close($conn);
+            }
+        }
+    }
+    
+
+
+
+    mysqli_close($conn);
+?>
