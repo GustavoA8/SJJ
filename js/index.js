@@ -57,6 +57,8 @@ btn.addEventListener('click',switchModal)
 window.onclick = function (event){
     const modal = document.querySelector('#modal')
     const modal2 = document.querySelector('#modal2')
+    const modals = document.querySelector('#modals')
+    const modalr = document.querySelector('#modalr')
     if(event.target == modal ){
         switchModal()
         
@@ -64,6 +66,12 @@ window.onclick = function (event){
     if ( event.target == modal2 ){
         switchModal()
         switchModal2()
+    }
+    if( event.target == modals){
+        switchModalSobre()
+    }
+    if(event.target == modalr){
+        switchModalRank()
     }
 }
 const btnCriar = document.querySelector("#btnCriar")
@@ -83,4 +91,17 @@ const switchModalSobre =() => {
 
 const btnsobre = document.querySelector('#pasta3')
 btnsobre.addEventListener('click',switchModalSobre)
+
+const switchModalRank =() => {
+    const modal = document.querySelector('#modalr')
+    const actualStyle = modal.style.display
+    if(actualStyle == 'block'){
+        modal.style.display = 'none'
+    }
+    else{
+        modal.style.display =  'block'
+    }
+}
+const btnrank = document.querySelector('#pasta1')
+btnrank.addEventListener('click',switchModalRank)
 

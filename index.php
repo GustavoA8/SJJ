@@ -1,7 +1,7 @@
 <?php
 include("connect.php");
 ?>
-<!-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -30,6 +30,8 @@ include("connect.php");
 body{
     
     background-image: url("imagens/fungog.gif");
+    padding:0;
+    margin:0;
 
 }
 .label1{
@@ -73,14 +75,27 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
 .modal #sobre{
+    background-color: greenyellow;
+    font-family: 'Press Start 2P', cursive;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.modal #rank{
     background-color: greenyellow;
     font-family: 'Press Start 2P', cursive;
     margin: 15% auto;
     padding: 20px;
     border-radius: 5px;
-    width: 80%;
-    height: 80%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,7 +120,7 @@ section{
 </head>
 <body >
     
-<div class="modal" id="modal">
+<div class="modal " id="modal">
     <div class="content">
         <!-- Insire seu conteúdo -->
         <form action="login.php" method="post">
@@ -135,8 +150,15 @@ section{
         
     </div>
 </div>
-<div class="modal" >
+<div class="modal" id="modals" >
     <div id="sobre" class="content">
+        <!-- Insire seu conteúdo -->
+       
+        
+    </div>
+</div>
+<div class="modal" id="modalr" >
+    <div id="rank" class="content">
         <!-- Insire seu conteúdo -->
        
         
@@ -172,7 +194,7 @@ section{
 
     <script src="js/index.js"></script>
 </body>
-</html> -->
+</html>
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $nome = filter_input(INPUT_POST, "cnome", FILTER_SANITIZE_SPECIAL_CHARS);
