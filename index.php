@@ -116,25 +116,29 @@ section{
 
 
   </style>
-  <audio id="musica" src="background-song.mpeg" controls autostart="true" loop></audio>
+  <audio id="musica" controls loop>
+     <source src="background-song.mpeg" type="audio/mpeg">
+  </audio>
 </head>
 <body >
     
 <div class="modal " id="modal">
     <div class="content">
         <!-- Insire seu conteúdo -->
-        <form action="login.php" method="post">
+        <form action="" method="post">
             <label for="nome">Nickname:</label><br>
             <input type="text" id="nick" name="nick" value=""><br>
             <label for="senha">Senha</label><br>
             <input type="text" id="senha" name="senha" value=""><br><br>
-            <input type="submit" value="logar" name="logar">
+            <div id='erro'></div>
+            <input type="button" onclick="login()" value="logar" name="logar">
             <div class="float-sm-end">
             <input type="button" id="btnCriar" value="Criar">
             </div>
         </form>
     </div>
 </div>
+
 <div class="modal" id="modal2">
     <div class="content">
         <!-- Insire seu conteúdo -->
@@ -147,9 +151,9 @@ section{
             <input type="text" name="csenha" id="csenha"><br><br>
             <input type="submit" value="Cadastrar">
         </form>
-        
     </div>
 </div>
+
 <div class="modal" id="modals" >
     <div id="sobre" class="content">
         <!-- Insire seu conteúdo -->
