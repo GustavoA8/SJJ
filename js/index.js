@@ -44,7 +44,12 @@ function login() {
       let situacao = http.responseText;
       situacao = this.responseText;
       console.log(situacao);
-      alert("Logado com sucesso!")
+      console.log(situacao.login);
+      if(situacao.login == false){
+      alert(situacao)
+      }else{
+        alert(situacao.sucesso);
+      }
      }
     }
     http.send(params);
@@ -106,6 +111,8 @@ const switchModalSobre =() => {
     }
 
 }
+document.querySelector("#login")
+console.log(document.querySelector("#login").clientHeight)
 
 const btnsobre = document.querySelector('#pasta3')
 btnsobre.addEventListener('click',switchModalSobre)

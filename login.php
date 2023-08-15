@@ -28,14 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
             $verifica = mysqli_query($conn,"SELECT user_nick, user_senha FROM tb_usuarios WHERE user_nick = '$nick' AND user_senha = '$senha'") or die("erro ao selecionar");
             if (mysqli_num_rows($verifica) <= 0) {
-                
+                $situacao["login"] = false;
                 $situacao["erro"] = '<script>let erro = document.querySelector("#erro")
                 erro.innerHTML="Login ou senha incorreto" </script>';
-                echo($codigo);
+                echo($situacao);
                 // header("Location:index.php");
                 
                 
             } else {
+                $situacao["login"] = true;
                 $situacao["sucesso"] = "Funcionando"
                 echo json_encode ($situacao);
             }

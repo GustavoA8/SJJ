@@ -65,15 +65,26 @@ body{
 }
 
 .modal .content{
-    background-color: greenyellow;
+    background-image: url("imagens/fundo2.png");
     font-family: 'Press Start 2P', cursive;
-    margin: 15% auto;
+    margin:auto;
     padding: 20px;
     border-radius: 5px;
-    width: 70%;
+    width: 98%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#caixa{
+    background-color: green;
+    width: 70%;
+    height:25%;
+    margin: 15% auto;
+    
+    
+    
 }
 
 .modal #sobre{
@@ -105,6 +116,13 @@ section{
     margin-top: 1000px;
 }
 
+#erro{
+    display: None;
+}
+
+#erro .abrir{
+    display: block;
+}
 
 #div1{
     text-align: center;
@@ -123,7 +141,8 @@ section{
 <body >
     
 <div class="modal " id="modal">
-    <div class="content">
+   <div class="row rounded-4" id="caixa">
+    <div id="login" class="content">
         <!-- Insire seu conteúdo -->
         <form action="" method="post">
             <label for="nome">Nickname:</label><br>
@@ -136,6 +155,7 @@ section{
             <input type="button" id="btnCriar" value="Criar">
             </div>
         </form>
+        </div>
     </div>
 </div>
 
