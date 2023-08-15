@@ -31,29 +31,7 @@ function normal3(){
     console.log("Funcionando")
     img.src="imagens/pasta.png"
 }
-function login() {
-    var nick = document.getElementById("nick").value;
-    var senha = document.getElementById("senha").value;
-    var http = new XMLHttpRequest();
-    var url = 'login.php';
-    var params = 'nick=' + nick + '&senha=' + senha;
-    http.open('POST', url, true);
-    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    http.onreadystatechange = function () {
-     if (http.readyState == 4 && http.status == 200) {
-      let situacao = http.responseText;
-      situacao = this.responseText;
-      console.log(situacao);
-      console.log(situacao.login);
-      if(situacao.login == false){
-      alert(situacao)
-      }else{
-        alert(situacao.sucesso);
-      }
-     }
-    }
-    http.send(params);
-   }
+
 const switchModal = () => {
     const modal = document.querySelector('#modal')
     const actualStyle = modal.style.display

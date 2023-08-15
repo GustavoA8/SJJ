@@ -27,6 +27,8 @@
 body{
     
     background-image: url("imagens/fungog.gif");
+    padding:0;
+    margin:0;
 
 }
 .label1{
@@ -60,15 +62,26 @@ body{
 }
 
 .modal .content{
-    background-color: greenyellow;
+    background-image: url("imagens/fundo2.png");
     font-family: 'Press Start 2P', cursive;
-    margin: 15% auto;
+    margin:auto;
     padding: 20px;
     border-radius: 5px;
-    width: 70%;
+    width: 98%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#caixa{
+    background-color: green;
+    width: 70%;
+    height:25%;
+    margin: 15% auto;
+    
+    
+    
 }
 
 .modal #sobre{
@@ -84,11 +97,29 @@ body{
     align-items: center;
 
 }
+.modal #rank{
+    background-color: greenyellow;
+    font-family: 'Press Start 2P', cursive;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 section{
     margin-top: 1000px;
 }
 
+#erro{
+    display: None;
+}
+
+#erro .abrir{
+    display: block;
+}
 
 #div1{
     text-align: center;
@@ -100,25 +131,31 @@ section{
 
 
   </style>
-  <audio id="musica" src="background-song.mpeg" controls autostart="true" loop></audio>
+  <audio id="musica" controls loop>
+     <source src="background-song.mpeg" type="audio/mpeg">
+  </audio>
 </head>
 <body >
     
-<div class="modal row" id="modal">
-    <div class="content">
+<div class="modal " id="modal">
+   <div class="row rounded-4" id="caixa">
+    <div id="login" class="content">
         <!-- Insire seu conteúdo -->
-        <form action="login.php" method="post">
+        <form action="" method="post">
             <label for="nome">Nickname:</label><br>
             <input type="text" id="nick" name="nick" value=""><br>
             <label for="senha">Senha</label><br>
             <input type="text" id="senha" name="senha" value=""><br><br>
-            <input type="submit" value="logar" name="logar">
+            <div id='erro'></div>
+            <input type="button" onclick="" value="logar" name="logar">
             <div class="float-sm-end">
             <input type="button" id="btnCriar" value="Criar">
             </div>
         </form>
+        </div>
     </div>
 </div>
+
 <div class="modal" id="modal2">
     <div class="content">
         <!-- Insire seu conteúdo -->
@@ -131,11 +168,18 @@ section{
             <input type="text" name="csenha" id="csenha"><br><br>
             <input type="submit" value="Cadastrar">
         </form>
+    </div>
+</div>
+
+<div class="modal" id="modals" >
+    <div id="sobre" class="content">
+        <!-- Insire seu conteúdo -->
+       
         
     </div>
 </div>
-<div class="modal" id="modals" >
-    <div id="sobre" class="content">
+<div class="modal" id="modalr" >
+    <div id="rank" class="content">
         <!-- Insire seu conteúdo -->
        
         
