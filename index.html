@@ -31,6 +31,12 @@ body{
     margin:0;
 
 }
+h2{
+    font-family: 'Press Start 2P', cursive;
+    color: aliceblue;
+    
+    position: relative;
+}
 .label1{
     font-family: 'Press Start 2P', cursive;
     color: aliceblue;
@@ -58,30 +64,42 @@ body{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal .content{
-    background-image: url("imagens/fundo2.png");
+    background-image: url("imagens/fundologin2.png");
     font-family: 'Press Start 2P', cursive;
     margin:auto;
     padding: 20px;
     border-radius: 5px;
-    width: 98%;
-    height: 90%;
+    width: 97%;
+    height: 92%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
+    /* box-shadow: rgba(6, 71, 1, 0.5) 0px 22px 70px 4px; */
+    border: solid black 2px;
+    
 }
 
 #caixa{
-    background-color: green;
-    width: 70%;
-    height:25%;
+    background-image: url("Imagens/ffundo.png");
+    width: 40%;
+    height:35%;
     margin: 15% auto;
+    border: solid green 2px;
     
     
     
+}
+#caixa2{
+    background-image: url("Imagens/ffundo.png");
+    width: 40%;
+    height:40%;
+    margin: 15% auto;
+    border: solid green 2px;
 }
 
 .modal #sobre{
@@ -141,13 +159,15 @@ section{
    <div class="row rounded-4" id="caixa">
     <div id="login" class="content">
         <!-- Insire seu conteúdo -->
+        <h2>Login</h2>
+        <hr>
         <form action="" method="post">
             <label for="nome">Nickname:</label><br>
             <input type="text" id="nick" name="nick" value=""><br>
             <label for="senha">Senha</label><br>
             <input type="text" id="senha" name="senha" value=""><br><br>
             <div id='erro'></div>
-            <input type="button" onclick="" value="logar" name="logar">
+            <input type="button" onclick="" value="Logar" name="logar">
             <div class="float-sm-end">
             <input type="button" id="btnCriar" value="Criar">
             </div>
@@ -157,7 +177,10 @@ section{
 </div>
 
 <div class="modal" id="modal2">
+ <div class="row rounded-4" id="caixa2">
     <div class="content">
+        <h2>Cadastrar</h2>
+        <hr>
         <!-- Insire seu conteúdo -->
         <form action="index.php" method="post">
             <label for="cnome">Nome:</label><br>
@@ -169,6 +192,7 @@ section{
             <input type="submit" value="Cadastrar">
         </form>
     </div>
+ </div>
 </div>
 
 <div class="modal" id="modals" >

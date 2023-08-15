@@ -89,8 +89,6 @@ const switchModalSobre =() => {
     }
 
 }
-document.querySelector("#login")
-console.log(document.querySelector("#login").clientHeight)
 
 const btnsobre = document.querySelector('#pasta3')
 btnsobre.addEventListener('click',switchModalSobre)
