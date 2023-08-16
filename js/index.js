@@ -1,3 +1,4 @@
+
 function mudar1(){
     let img = document.getElementById("pasta1")
     console.log("Funcionando")
