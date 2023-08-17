@@ -79,8 +79,7 @@ window.onclick = function (event){
         switchModalRank()
     }
 }
-
-const btnCriar = document.querySelector("#btnCriar")
+var x = document.getElementById("musica"); 
 btnCriar.addEventListener('click',switchModal2)
 
 
