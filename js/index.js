@@ -43,7 +43,8 @@ const switchModal = () => {
         modal.style.display =  'block'
     }
 }
-const switchModal2 =() => {
+function switchModal2 (){
+    console.log("entrou")
         const modal = document.querySelector('#modal2')
         const actualStyle = modal.style.display
         if(actualStyle == 'block'){
@@ -53,6 +54,8 @@ const switchModal2 =() => {
             modal.style.display =  'block'
         }
     }
+
+
 const btn = document.querySelector('#pasta2')
 btn.addEventListener('click',switchModal)
 
@@ -76,8 +79,19 @@ window.onclick = function (event){
         switchModalRank()
     }
 }
+
 const btnCriar = document.querySelector("#btnCriar")
 btnCriar.addEventListener('click',switchModal2)
+
+
+
+const btnEntrar = document.querySelector("#entrar")
+
+btnEntrar.addEventListener('click',switchModal2)
+
+
+
+
 
 const switchModalSobre =() => {
     const modal = document.querySelector('#modals')
